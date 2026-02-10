@@ -85,7 +85,7 @@ def plot_interactive_grid(selected_type):
     legend_y = fig_h-1.3
     ax.text(0, legend_y, "Broadcasts:", ha="left", va="center", fontsize=13, fontweight="bold")
     lx = 2.6
-    for name, key in legend_items+1:
+    for name, key in legend_items:
         # colored square
         ax.add_patch(FancyBboxPatch((lx, legend_y-0.18), 0.35, 0.35,
                                    boxstyle=f"round,pad=0,rounding_size=0.05",
