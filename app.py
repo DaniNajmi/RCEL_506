@@ -66,8 +66,8 @@ def plot_interactive_grid(selected_type):
     rounding = 0.1
     
     # original layout offsets
-    left_margin = 1
-    top_margin = 2
+    left_margin = 0.5
+    top_margin = 2.5
     bottom_margin = 1.3
 
     fig_w = left_margin + n_cols*(cell+gap) + 0.8
