@@ -20,11 +20,26 @@ mpl.rcParams["figure.dpi"] = 150
 
 # --- DATA ---
 grid = [
+    # rank 1 (top row)
     ["awards","awards","awards","awards","awards","other","awards","other","parade","parade","parade"],
-    ["other","other","other","other","other","awards","other","awards","other","awards","other"],
-    ["60m","60m","60m","60m","60m","60m","60m","60m","60m","60m","60m"],
-    ["ncis","ncis","ncis","ncis","ncis","ncis","ncis","ncis","ncis","ncis","ncis"],
-    # ... (Rest of your data grid from the .py file)
+    # rank 2
+    ["other","other","other","other","other","awards","other","awards","other","awards","awards"],
+    # rank 3
+    ["awards","other","other","other","other","parade","parade","parade","other","other","other"],
+    # rank 4
+    ["parade","awards","awards","parade","parade","60m","other","other","other","60m","other"],
+    # rank 5
+    ["ncis","other","other","awards","awards","other","other","other","60m","60m","other"],
+    # rank 6
+    ["other","other","parade","60m","other","other","other","other","60m","60m","other"],
+    # rank 7
+    ["ncis","parade","other","other","other","other","other","60m","60m","60m","60m"],
+    # rank 8
+    ["ncis","other","ncis","other","other","other","awards","other","60m","60m","60m"],
+    # rank 9
+    ["ncis","ncis","ncis","60m","other","other","other","other","60m","60m","other"],
+    # rank 10 (bottom row)
+    ["ncis","other","other","ncis","other","other","other","other","awards","60m","60m"],
 ]
 
 years = ["2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"]
