@@ -117,7 +117,7 @@ def plot_interactive_grid(selected_type):
             if selected_type == 'All' or key == selected_type:
                 tile_facecolor = COLORS[key]
             else:
-                tile_facecolor = "green" # to provide contrast
+                tile_facecolor = "teal" # to provide contrast
 
             ax.add_patch(FancyBboxPatch((x0, y0), cell, cell,
                                        boxstyle=f"round,pad=0,rounding_size={rounding}",
