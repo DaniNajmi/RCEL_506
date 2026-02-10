@@ -90,13 +90,6 @@ selected_broadcast_type = name_to_key[target_name]
 
 # --- PLOTTING FUNCTION ---
 def plot_interactive_grid(selected_type):
-    n_rows = 10
-    n_cols = len(years)
-    cell = 0.8
-    gap = 0.15
-    rounding = 0.1
-    left_margin, top_margin, bottom_margin = 0.5, 2.5, 1
-
     fig_w = left_margin + n_cols*(cell+gap) + 0.8
     fig_h = top_margin + n_rows*(cell+gap) + bottom_margin
 
@@ -105,8 +98,13 @@ def plot_interactive_grid(selected_type):
     ax.set_ylim(0, fig_h)
     ax.axis("off")
 
-    # Title
+    # title
     ax.text(0, fig_h-0.2, TITLE, ha="left", va="top", fontsize=20, fontweight="bold")
+
+    # Legend
+    legend_y = fig_h-1.3
+    ax.text(0, legend_y, "Broadcasts:", ha="left", va="center", fontsize=10, fontweight="bold")
+    lx = 2.6
 
     # Grid logic
     grid_top_y = fig_h - top_margin
@@ -126,6 +124,12 @@ def plot_interactive_grid(selected_type):
             ax.add_patch(FancyBboxPatch((x0, y0), cell, cell,
                                        boxstyle=f"round,pad=0,rounding_size={rounding}",
                                        linewidth=0, facecolor=facecolor))
+        # year label
+        grid_top_y = fig_h - top_margin
+        for c_idx in range(n_cols):
+            if year_labels[c_idx]:
+                x = left_margin + c_idx*(cell+gap) + cell/2
+                ax.text(x, grid_top_y + 0.40, year_labels[c_idx], ha="center", va="center", fontsize=12, color="#6b6b6b")
     return fig
 
 # Display the result
