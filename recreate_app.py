@@ -239,8 +239,6 @@ print("Interactive dropdown linked to plotting function.")
 
 """# Now that it's interactive, upload to streamlit"""
 
-!pip install -q streamlit
-
 # Commented out IPython magic to ensure Python compatibility.
 # %%writefile app.py
 # import streamlit as st
