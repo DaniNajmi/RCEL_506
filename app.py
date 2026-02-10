@@ -61,8 +61,8 @@ selected_broadcast_type = name_to_key[selected_broadcast_name]
 def plot_interactive_grid(selected_type):
     n_rows = 10
     n_cols = len(years)
-    cell = 0.8
-    gap = 0.1
+    cell = 1
+    gap = 0.2
     rounding = 0.1
     
     # original layout offsets
