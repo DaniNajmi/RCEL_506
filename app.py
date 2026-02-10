@@ -62,7 +62,7 @@ def plot_interactive_grid(selected_type):
     n_rows = 10
     n_cols = len(years)
     cell = 0.8
-    gap = 0.15
+    gap = 0.01
     rounding = 0.1
     
     # original layout offsets
