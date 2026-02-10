@@ -20,21 +20,31 @@ mpl.rcParams["figure.dpi"] = 150
 
 # --- DATA ---
 grid = [
+    # rank 1 (top row)
     ["awards","awards","awards","awards","awards","other","awards","other","parade","parade","parade"],
-    ["other","other","other","other","other","awards","other","awards","other","awards","other"],
-    ["60m","60m","60m","60m","60m","60m","60m","60m","60m","60m","60m"],
-    ["ncis","ncis","ncis","ncis","ncis","ncis","ncis","ncis","ncis","ncis","ncis"],
-    ["other","other","other","other","other","other","other","other","other","other","other"],
-    ["other","other","other","other","other","other","other","other","other","other","other"],
-    ["other","other","other","other","other","other","other","other","other","other","other"],
-    ["other","other","other","other","other","other","other","other","other","other","other"],
-    ["other","other","other","other","other","other","other","other","other","other","other"],
-    ["other","other","other","other","other","other","other","other","other","other","other"]
+    # rank 2
+    ["other","other","other","other","other","awards","other","awards","other","awards","awards"],
+    # rank 3
+    ["awards","other","other","other","other","parade","parade","parade","other","other","other"],
+    # rank 4
+    ["parade","awards","awards","parade","parade","60m","other","other","other","60m","other"],
+    # rank 5
+    ["ncis","other","other","awards","awards","other","other","other","60m","60m","other"],
+    # rank 6
+    ["other","other","parade","60m","other","other","other","other","60m","60m","other"],
+    # rank 7
+    ["ncis","parade","other","other","other","other","other","60m","60m","60m","60m"],
+    # rank 8
+    ["ncis","other","ncis","other","other","other","awards","other","60m","60m","60m"],
+    # rank 9
+    ["ncis","ncis","ncis","60m","other","other","other","other","60m","60m","other"],
+    # rank 10 (bottom row)
+    ["ncis","other","other","ncis","other","other","other","other","awards","60m","60m"],
 ]
 
-years = ["2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"]
+years = ["","2014", "", "’16", "", "’18", "", "’20", "", "’22", ""]
 legend_items = [("Macy’s Parade","parade"), ("Academy Awards","awards"), ("“60 Minutes”","60m"), ("“NCIS”","ncis"), ("Other","other")]
-note = "Note: Academy Awards programs also include red carpet broadcasts.   Source: Nielsen   By The New York Times"
+note = "Note: Academy Awards programs also include red carpet broadcasts.   Source: Nielsen   By The New York\ntimes"
 
 # --- SIDEBAR INTERFACE ---
 st.sidebar.header("Navigation")
@@ -81,7 +91,7 @@ def plot_interactive_grid(selected_type):
                                    boxstyle=f"round,pad=0,rounding_size=0.05",
                                    linewidth=0, facecolor=COLORS[key]))
         # legend text
-        l_color = ("#4b2500" if key == "parade" else ("#e9a7a7" if key=="awards" else ("#ddc7ae" if key=="60m" else ("#7f9baa" if key=="ncis" else "#6b6b6b"))))
+        l_color = ("#4b2500" if key == "parade" else ("#e9a7a7" if key=="awards" else ("#ddc7ae" if key=="60m" else ("#7f9baa" if key=="ncis" else "#e6e6e6"))))
         ax.text(lx+0.5, legend_y, name, ha="left", va="center", fontsize=12, color=l_color)
         lx += 2.45 if key!="parade" else 2.2
 
