@@ -121,7 +121,7 @@ def plot_interactive_grid(selected_type):
 
             ax.add_patch(FancyBboxPatch((x0, y0), cell, cell,
                                        boxstyle=f"round,pad=0,rounding_size={rounding}",
-                                       linewidth=0, facecolor=tile_facecolor))
+                                       linewidth=0, facecolor=black))
 
     # 5. Footnote (Bottom)
     ax.text(0, 0.6, note, ha="left", va="bottom", fontsize=14, color="#6b6b6b")
