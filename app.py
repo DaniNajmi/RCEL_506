@@ -42,8 +42,40 @@ grid = [
     ["ncis","other","other","ncis","other","other","other","other","awards","60m","60m"],
 ]
 
-years = ["2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"]
+# year labeling at top to match
+years = ["","2014", "", "’16", "", "’18", "", "’20", "", "’22", ""]  # 11 columns
+
+# parameters
+
+n_rows = 10
+n_cols = 11
+
+cell = 1.0          # base unit
+gap = 0.2          # spacing between squares
+rounding = 0.10     # corner roundness
+
+# layout offsets
+left_margin = 0.5
+top_margin = 2.5
+bottom_margin = 1
+
+fig_w = left_margin + n_cols*(cell+gap) + 0.8
+fig_h = top_margin + n_rows*(cell+gap) + bottom_margin
+
+fig, ax = plt.subplots(figsize=(fig_w, fig_h))
+ax.set_xlim(0, fig_w)
+ax.set_ylim(0, fig_h)
+ax.axis("off")
+
+# title
+ax.text(0, fig_h-0.2, TITLE, ha="left", va="top", fontsize=20, fontweight="bold")
+
+# Legend
+legend_y = fig_h-1.3
+ax.text(0, legend_y, "Broadcasts:", ha="left", va="center", fontsize=10, fontweight="bold")
+
 legend_items = [("Macy’s Parade","parade"), ("Academy Awards","awards"), ("“60 Minutes”","60m"), ("“NCIS”","ncis"), ("Other","other")]
+lx = 2.6
 
 # --- STREAMLIT INTERACTIVITY ---
 st.sidebar.header("Filter View")
