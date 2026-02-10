@@ -68,7 +68,7 @@ def plot_interactive_grid(selected_type):
     # original layout offsets
     left_margin = 0.5
     top_margin = 2.5
-    bottom_margin = 1
+    bottom_margin = 2
 
     fig_w = left_margin + n_cols*(cell+gap) + 0.8
     fig_h = top_margin + n_rows*(cell+gap) + bottom_margin
@@ -91,7 +91,7 @@ def plot_interactive_grid(selected_type):
                                    boxstyle=f"round,pad=0,rounding_size=0.05",
                                    linewidth=0, facecolor=COLORS[key]))
         # legend text
-        l_color = ("#4b2500" if key == "parade" else ("#e9a7a7" if key=="awards" else ("#ddc7ae" if key=="60m" else ("#7f9baa" if key=="ncis" else "#e6e6e6"))))
+        l_color = ("#4b2500" if key == "parade" else ("#e9a7a7" if key=="awards" else ("#ddc7ae" if key=="60m" else ("#7f9baa" if key=="ncis" else ("#e6e6e6" if key=="other"))))
         ax.text(lx+0.5, legend_y, name, ha="left", va="center", fontsize=12, color=l_color)
         lx += 2.45 if key!="parade" else 2.2
 
