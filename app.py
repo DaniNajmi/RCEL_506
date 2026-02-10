@@ -49,7 +49,7 @@ note = "Note: Academy Awards programs also include red carpet broadcasts.   Sour
 # --- SIDEBAR INTERFACE ---
 st.sidebar.header("Navigation")
 selected_broadcast_name = st.sidebar.selectbox(
-    "Broadcast Type:",
+    "Select the Broadcast Type Desired:",
     options=["All", "Macy’s Parade", "Academy Awards", "“60 Minutes”", "“NCIS”", "Other"]
 )
 
@@ -66,9 +66,9 @@ def plot_interactive_grid(selected_type):
     rounding = 0.1
     
     # original layout offsets
-    left_margin = 0.5
-    top_margin = 2.5
-    bottom_margin = 2
+    left_margin = 0.3
+    top_margin = 2
+    bottom_margin = 1.3
 
     fig_w = left_margin + n_cols*(cell+gap) + 0.8
     fig_h = top_margin + n_rows*(cell+gap) + bottom_margin
@@ -83,9 +83,9 @@ def plot_interactive_grid(selected_type):
 
     # 2. Legend Subtitles
     legend_y = fig_h-1.3
-    ax.text(0, legend_y, "Broadcasts:", ha="left", va="center", fontsize=10, fontweight="bold")
+    ax.text(0, legend_y, "Broadcasts:", ha="left", va="center", fontsize=13, fontweight="bold")
     lx = 2.6
-    for name, key in legend_items:
+    for name, key in legend_items+1:
         # colored square
         ax.add_patch(FancyBboxPatch((lx, legend_y-0.18), 0.35, 0.35,
                                    boxstyle=f"round,pad=0,rounding_size=0.05",
